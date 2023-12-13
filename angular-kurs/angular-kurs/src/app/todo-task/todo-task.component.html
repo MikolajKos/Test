@@ -1,0 +1,16 @@
+<ng-container *ngIf="tasksList.length >0; else noTask">
+
+
+  <ol class="mt-5 list-group list-group-numbered float-end">
+    <li class="p-1" *ngFor="let task of tasksList">
+      <span class="me-3 float-start" id="onGoingTasks">{{task}}</span>
+
+      <button type="button" class="btn btn-warning float-end" (click)="remove(task)">Usuń</button>
+      <button type="button" class="btn btn-success float-end me-1" (click)="done(task)">Zrobione</button>
+    </li>
+  </ol>
+</ng-container>
+
+<ng-template #noTask>
+  <p class="mt-5">Brak zadań, masz wolny czas!</p>
+</ng-template>
